@@ -30,8 +30,3 @@ async def general_chat(prompt: str):
     from ai.brain import general_assistant
     result = await general_assistant(prompt)
     return result
-
-
-if __name__ == "__main__":
-    
-    uvicorn.run(app, host=settings.host, port=settings.port)
