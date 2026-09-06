@@ -3,9 +3,9 @@ from pydantic_ai.output import NativeOutput
 from dotenv import load_dotenv
 load_dotenv()
 
-import models.basemodel as basemodel
-from utils.settings import model_name
-from data.instructions import coding_instructions, habit_instructions, general_instructions
+import src.models.basemodel as basemodel
+from src.utils.settings import model_name
+from src.data.instructions import coding_instructions, habit_instructions, general_instructions
 
 # groq:openai/gpt-oss-120b is unreliable with pydantic-ai's default tool-based
 # structured output (it emits its own tool names, e.g. 'json', instead of
