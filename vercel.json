@@ -1,8 +1,0 @@
-{
-  "functions": {
-    "api/index.py": {}
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/index" }
-  ]
-}
