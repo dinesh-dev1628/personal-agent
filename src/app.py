@@ -33,4 +33,5 @@ async def general_chat(prompt: str):
 
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host=settings.host, port=settings.port)
+    
+    uvicorn.run(app, host=settings.host, port=settings.port)
