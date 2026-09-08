@@ -3,6 +3,7 @@ import uvicorn
 import traceback
 
 from src.utils.env_data import settings
+import src.ai.brain as brain
 
 app = FastAPI()
 
@@ -15,9 +16,8 @@ async def root():
 @app.post("/habit-maker")
 async def habit_generator(prompt: str):
     try:
-        from ai.brain import habit_maker
 
-        result = await habit_maker(prompt)
+        result = await brain.habit_maker(prompt)
 
         return result
 
@@ -34,9 +34,8 @@ async def habit_generator(prompt: str):
 @app.post("/coding-assistant")
 async def coding_trainer(prompt: str):
     try:
-        from ai.brain import coding_assistant
 
-        result = await coding_assistant(prompt)
+        result = await brain.coding_assistant(prompt)
 
         return result
 
@@ -53,9 +52,7 @@ async def coding_trainer(prompt: str):
 @app.post("/general-assistant")
 async def general_chat(prompt: str):
     try:
-        from ai.brain import general_assistant
-
-        result = await general_assistant(prompt)
+        result = await brain.general_assistant(prompt)
 
         return result
 
